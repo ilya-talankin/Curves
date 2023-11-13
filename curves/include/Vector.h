@@ -1,6 +1,6 @@
 #pragma once
 
-#include <sstream>
+#include <ostream>
 
 namespace geometry {
 
@@ -30,6 +30,4 @@ private:
 
 } // namespace geometry
 
-std::ostream& operator<<(std::ostream& os, const geometry::Vector& v) {
-	return os << '{' << v.dx() << ", " << v.dy() << ", " << v.dz() << '}';
-}
+std::ostream& operator<<(std::ostream& os, const geometry::Vector& v);

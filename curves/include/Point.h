@@ -1,7 +1,6 @@
 #pragma once
 
-#include <sstream>
-#include "Vector.h"
+#include <ostream>
 
 namespace geometry {
 
@@ -32,6 +31,4 @@ private:
 
 } // namespace geometry
 
-std::ostream& operator<<(std::ostream& os, const geometry::Point& p) {
-	return os << '(' << p.x() << ", " << p.y() << ", " << p.z() << ')';
-}
+std::ostream& operator<<(std::ostream& os, const geometry::Point& p);

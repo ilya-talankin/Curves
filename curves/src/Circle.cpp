@@ -1,6 +1,7 @@
-#include "Circle.h"
+#include "../include/Circle.h"
 #include <cmath>
 
+using namespace geometry;
 using namespace geometry::curves;
 
 Circle::Circle(double rad) {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Curve.h"
+#include "Curve.h"
 
 namespace geometry::curves {
 
@@ -9,9 +9,9 @@ public:
 	Circle() = default;
 	Circle(double rad);
 
-    virtual Point GetPoint(parametr_t t) const override;
-    virtual Vector GetDerivative(parametr_t t) const override;
-    virtual CurvesType GetType() const override;
+    virtual Point GetPoint(parameter_t t) const override;
+    virtual Vector GetDerivative(parameter_t t) const override;
+    virtual CurveType GetType() const override;
     virtual std::string_view GetTypeName() const override;
 
     double Rad() const;

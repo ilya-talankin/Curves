@@ -1,7 +1,8 @@
-#include "Helix.h"
+#include "../include/Helix.h"
 #include <cmath>
 #include <numbers>
 
+using namespace geometry;
 using namespace geometry::curves;
 
 Helix::Helix(double rad, double step) {
@@ -10,11 +11,11 @@ Helix::Helix(double rad, double step) {
 }
 
 Point Helix::GetPoint(parameter_t t) const {
-	return Point(m_rad * std::cos(t), m_rad * std::sin(t), m_step * t / std::numbers::pi);
+	return Point(m_rad * std::cos(t), m_rad * std::sin(t), m_step * t / (2 * std::numbers::pi));
 }
 
 Vector Helix::GetDerivative(parameter_t t) const {
-	return Vector(m_rad * (-std::sin(t)), m_rad * std::cos(t), m_step / std::numbers::pi);
+	return Vector(m_rad * (-std::sin(t)), m_rad * std::cos(t), m_step / (2 * std::numbers::pi));
 }
 
 CurveType Helix::GetType() const {
@@ -26,7 +27,7 @@ std::string_view Helix::GetTypeName() const {
 }
 
 double Helix::Rad() const {
-	return m_rad();
+	return m_rad;
 }
 
 double Helix::Step() const {

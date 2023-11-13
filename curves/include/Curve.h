@@ -1,7 +1,6 @@
 #pragma once
 
 #include <memory>
-#include <ostream>
 #include <string_view>
 
 #include "Vector.h"
@@ -13,7 +12,7 @@ namespace curves {
 
 enum class CurveType {
     CIRCLE,
-    ELLIPS,
+    ELLIPSE,
     HELIX
 };
 
@@ -21,8 +20,8 @@ typedef double parameter_t;
 
 class Curve {
 public:
-    virtual Point GetPoint(parametr_t t) const = 0;
-    virtual Vector GetDerivative(parametr_t t) const = 0;
+    virtual Point GetPoint(parameter_t t) const = 0;
+    virtual Vector GetDerivative(parameter_t t) const = 0;
     virtual CurveType GetType() const = 0;
     virtual std::string_view GetTypeName() const = 0;
 };
